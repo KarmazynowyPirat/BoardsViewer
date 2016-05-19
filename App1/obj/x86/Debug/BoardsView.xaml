@@ -1,0 +1,45 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="App1.BoardsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:App1.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+
+            <GridView x:ConnectionId='2' Margin="70,70,70,70"                                     >
+
+
+                <GridView.ItemTemplate>
+                    <DataTemplate                          >
+                        <Button x:ConnectionId='3' Width="200" Height="200"                          FontSize="42">
+
+                        </Button>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+
+                <!--<GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid MaximumRowsOrColumns="5"></ItemsWrapGrid>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>-->
+            </GridView>
+        </ScrollViewer>
+    </Grid>
+</Page>
+
+
+<!--<ListView Margin="50,50,50,50" ItemsSource="{x:Bind Boards.Boards}">
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="models:Board">
+            <Grid>
+                <TextBlock Text="{x:Bind title}"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>-->
+
