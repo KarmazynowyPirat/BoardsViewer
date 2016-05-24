@@ -445,3 +445,8 @@ C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\HtmlAgilityPack.pri.xml
 C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\Core\Microsoft.Xaml.Interactions.dll
 C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\Core\Microsoft.Xaml.Interactivity.dll
 C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\Core\HtmlAgilityPack.dll
+C:\Users\Krzys\Documents\App1\App1\bin\ARM\Debug\SingleThreadView.xbf
+C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\SingleThreadView.g.i.cs
+C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\SingleThreadView.g.cs
+C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\SingleThreadView.xaml
+C:\Users\Krzys\Documents\App1\App1\obj\ARM\Debug\SingleThreadView.xbf

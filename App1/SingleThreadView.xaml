@@ -19,12 +19,16 @@
                                     <TextBlock Text="{Binding no}"/>
                                     <TextBlock HorizontalAlignment="Right" Text="{Binding now}" Style="{StaticResource CaptionTextBlockStyle}"/>
                                 </Grid>
-                                <Image Loaded="ImageLoaded" Tapped="ImageTapped" Width="100" Height="100"/>
-                                <RichTextBlock>
-                                    <Paragraph>
-                                        <Run Text="{Binding com}"></Run>
-                                    </Paragraph>
-                                </RichTextBlock>
+                                <Image Loaded="ImageLoaded" Tapped="ImageTapped" Width="100" Height="100">
+                                    <FlyoutBase.AttachedFlyout>
+                                        <Flyout>
+                                            <Grid>
+                                                <Image Loaded="ImageLoaded" MaxWidth="1000"></Image>
+                                            </Grid>
+                                        </Flyout>
+                                    </FlyoutBase.AttachedFlyout>
+                                </Image>
+                                <RichTextBlock models:Properties.Html="{Binding com}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

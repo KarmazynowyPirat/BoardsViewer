@@ -132,7 +132,7 @@ namespace App1.App1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[11];
+            _typeNameTable = new string[15];
             _typeNameTable[0] = "App1.BoardsView";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -140,12 +140,16 @@ namespace App1.App1_XamlTypeInfo
             _typeNameTable[4] = "App1.ViewModels.NotificationBase";
             _typeNameTable[5] = "Object";
             _typeNameTable[6] = "App1.MainPage";
-            _typeNameTable[7] = "App1.SingleThreadView";
-            _typeNameTable[8] = "App1.ViewModels.SingleThreadViewModel";
-            _typeNameTable[9] = "App1.ThreadsView";
-            _typeNameTable[10] = "App1.ViewModels.ThreadsViewModel";
+            _typeNameTable[7] = "App1.Models.Properties";
+            _typeNameTable[8] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[9] = "String";
+            _typeNameTable[10] = "App1.SingleThreadView";
+            _typeNameTable[11] = "App1.ViewModels.SingleThreadViewModel";
+            _typeNameTable[12] = "App1.RepliesConverter";
+            _typeNameTable[13] = "App1.ThreadsView";
+            _typeNameTable[14] = "App1.ViewModels.ThreadsViewModel";
 
-            _typeTable = new global::System.Type[11];
+            _typeTable = new global::System.Type[15];
             _typeTable[0] = typeof(global::App1.BoardsView);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -153,10 +157,14 @@ namespace App1.App1_XamlTypeInfo
             _typeTable[4] = typeof(global::App1.ViewModels.NotificationBase);
             _typeTable[5] = typeof(global::System.Object);
             _typeTable[6] = typeof(global::App1.MainPage);
-            _typeTable[7] = typeof(global::App1.SingleThreadView);
-            _typeTable[8] = typeof(global::App1.ViewModels.SingleThreadViewModel);
-            _typeTable[9] = typeof(global::App1.ThreadsView);
-            _typeTable[10] = typeof(global::App1.ViewModels.ThreadsViewModel);
+            _typeTable[7] = typeof(global::App1.Models.Properties);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[9] = typeof(global::System.String);
+            _typeTable[10] = typeof(global::App1.SingleThreadView);
+            _typeTable[11] = typeof(global::App1.ViewModels.SingleThreadViewModel);
+            _typeTable[12] = typeof(global::App1.RepliesConverter);
+            _typeTable[13] = typeof(global::App1.ThreadsView);
+            _typeTable[14] = typeof(global::App1.ViewModels.ThreadsViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -195,10 +203,12 @@ namespace App1.App1_XamlTypeInfo
         private object Activate_3_BoardsViewModel() { return new global::App1.ViewModels.BoardsViewModel(); }
         private object Activate_4_NotificationBase() { return new global::App1.ViewModels.NotificationBase(); }
         private object Activate_6_MainPage() { return new global::App1.MainPage(); }
-        private object Activate_7_SingleThreadView() { return new global::App1.SingleThreadView(); }
-        private object Activate_8_SingleThreadViewModel() { return new global::App1.ViewModels.SingleThreadViewModel(); }
-        private object Activate_9_ThreadsView() { return new global::App1.ThreadsView(); }
-        private object Activate_10_ThreadsViewModel() { return new global::App1.ViewModels.ThreadsViewModel(); }
+        private object Activate_7_Properties() { return new global::App1.Models.Properties(); }
+        private object Activate_10_SingleThreadView() { return new global::App1.SingleThreadView(); }
+        private object Activate_11_SingleThreadViewModel() { return new global::App1.ViewModels.SingleThreadViewModel(); }
+        private object Activate_12_RepliesConverter() { return new global::App1.RepliesConverter(); }
+        private object Activate_13_ThreadsView() { return new global::App1.ThreadsView(); }
+        private object Activate_14_ThreadsViewModel() { return new global::App1.ViewModels.ThreadsViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -252,30 +262,53 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  App1.SingleThreadView
+            case 7:   //  App1.Models.Properties
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_7_Properties;
+                userType.AddMemberName("Html");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 9:   //  String
+                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  App1.SingleThreadView
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_SingleThreadView;
+                userType.Activator = Activate_10_SingleThreadView;
                 userType.AddMemberName("SingleThreadViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  App1.ViewModels.SingleThreadViewModel
+            case 11:   //  App1.ViewModels.SingleThreadViewModel
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("App1.ViewModels.NotificationBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  App1.ThreadsView
+            case 12:   //  App1.RepliesConverter
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_12_RepliesConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  App1.ThreadsView
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_ThreadsView;
+                userType.Activator = Activate_13_ThreadsView;
                 userType.AddMemberName("ThreadsViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  App1.ViewModels.ThreadsViewModel
+            case 14:   //  App1.ViewModels.ThreadsViewModel
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("App1.ViewModels.NotificationBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -306,22 +339,30 @@ namespace App1.App1_XamlTypeInfo
             var that = (global::App1.MainPage)instance;
             that.Boards = (global::App1.ViewModels.BoardsViewModel)Value;
         }
-        private object get_2_SingleThreadView_SingleThreadViewModel(object instance)
+        private object get_2_Properties_Html(object instance)
+        {
+            return global::App1.Models.Properties.GetHtml((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_2_Properties_Html(object instance, object Value)
+        {
+            global::App1.Models.Properties.SetHtml((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.String)Value);
+        }
+        private object get_3_SingleThreadView_SingleThreadViewModel(object instance)
         {
             var that = (global::App1.SingleThreadView)instance;
             return that.SingleThreadViewModel;
         }
-        private void set_2_SingleThreadView_SingleThreadViewModel(object instance, object Value)
+        private void set_3_SingleThreadView_SingleThreadViewModel(object instance, object Value)
         {
             var that = (global::App1.SingleThreadView)instance;
             that.SingleThreadViewModel = (global::App1.ViewModels.SingleThreadViewModel)Value;
         }
-        private object get_3_ThreadsView_ThreadsViewModel(object instance)
+        private object get_4_ThreadsView_ThreadsViewModel(object instance)
         {
             var that = (global::App1.ThreadsView)instance;
             return that.ThreadsViewModel;
         }
-        private void set_3_ThreadsView_ThreadsViewModel(object instance, object Value)
+        private void set_4_ThreadsView_ThreadsViewModel(object instance, object Value)
         {
             var that = (global::App1.ThreadsView)instance;
             that.ThreadsViewModel = (global::App1.ViewModels.ThreadsViewModel)Value;
@@ -346,17 +387,26 @@ namespace App1.App1_XamlTypeInfo
                 xamlMember.Getter = get_1_MainPage_Boards;
                 xamlMember.Setter = set_1_MainPage_Boards;
                 break;
+            case "App1.Models.Properties.Html":
+                userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("App1.Models.Properties");
+                xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "Html", "String");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_2_Properties_Html;
+                xamlMember.Setter = set_2_Properties_Html;
+                break;
             case "App1.SingleThreadView.SingleThreadViewModel":
                 userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("App1.SingleThreadView");
                 xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "SingleThreadViewModel", "App1.ViewModels.SingleThreadViewModel");
-                xamlMember.Getter = get_2_SingleThreadView_SingleThreadViewModel;
-                xamlMember.Setter = set_2_SingleThreadView_SingleThreadViewModel;
+                xamlMember.Getter = get_3_SingleThreadView_SingleThreadViewModel;
+                xamlMember.Setter = set_3_SingleThreadView_SingleThreadViewModel;
                 break;
             case "App1.ThreadsView.ThreadsViewModel":
                 userType = (global::App1.App1_XamlTypeInfo.XamlUserType)GetXamlTypeByName("App1.ThreadsView");
                 xamlMember = new global::App1.App1_XamlTypeInfo.XamlMember(this, "ThreadsViewModel", "App1.ViewModels.ThreadsViewModel");
-                xamlMember.Getter = get_3_ThreadsView_ThreadsViewModel;
-                xamlMember.Setter = set_3_ThreadsView_ThreadsViewModel;
+                xamlMember.Getter = get_4_ThreadsView_ThreadsViewModel;
+                xamlMember.Setter = set_4_ThreadsView_ThreadsViewModel;
                 break;
             }
             return xamlMember;

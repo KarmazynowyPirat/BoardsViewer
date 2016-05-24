@@ -17,8 +17,16 @@
 
                 <GridView.ItemTemplate>
                     <DataTemplate                          >
-                        <Border x:ConnectionId='3' BorderThickness="2" BorderBrush="Black" Height="80">
-                            <TextBlock x:ConnectionId='4'                       TextAlignment="Center" VerticalAlignment="Center" Width="80" FontSize="28"/>
+                        <Border x:ConnectionId='3' BorderThickness="2" BorderBrush="Black" Height="100">
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock x:ConnectionId='4'                       TextAlignment="Center" Width="100" FontSize="28"/>
+                                <!--<TextBlock Text="{Binding title}" FontSize="12" TextAlignment="Center"/>-->
+                                <RichTextBlock IsTextSelectionEnabled="False" FontSize="12" TextAlignment="Center">
+                                    <Paragraph>
+                                        <Run Text="{Binding title}"></Run>
+                                    </Paragraph>
+                                </RichTextBlock>
+                            </StackPanel>
                         </Border>
                     </DataTemplate>
                 </GridView.ItemTemplate>

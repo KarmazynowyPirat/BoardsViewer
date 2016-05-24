@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.Interfaces>
+    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
+  </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="title" />
     <RootPropertyPathName Name="com" />
     <RootPropertyPathName Name="now" />
     <RootPropertyPathName Name="no" />
+    <RootPropertyPathName Name="replies" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -11,6 +16,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
+      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -37,16 +43,38 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Child" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Orientation" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
       <RootProperty Name="TextAlignment" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Style" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RichTextBlock">
+      <RootProperty Name="IsTextSelectionEnabled" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Blocks" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Paragraph">
+      <RootProperty Name="Inlines" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Converter" />
     </RootType>
     <RootType FullName="App1.BoardsView" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
@@ -70,12 +98,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
       <RootProperty Name="Visibility" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Orientation" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
     <RootType FullName="App1.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
@@ -85,21 +107,24 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="MaxWidth" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="Tapped" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RichTextBlock">
-      <RootProperty Name="Blocks" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.FlyoutBase">
+      <RootMethod Name="GetAttachedFlyout" />
+      <RootMethod Name="SetAttachedFlyout" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Paragraph">
-      <RootProperty Name="Inlines" />
+    <RootType FullName="App1.Models.Properties">
+      <RootMethod Name="GetHtml" />
+      <RootMethod Name="SetHtml" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
+      <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="App1.SingleThreadView" />
+    <RootType FullName="App1.RepliesConverter" />
     <RootType FullName="App1.ThreadsView" />
   </Roots.RootTypes>
 </Roots>

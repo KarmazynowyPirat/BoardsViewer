@@ -108,6 +108,7 @@
     <Compile Include="Models\ThreadPosts.cs" />
     <Compile Include="Models\TransitionThreadsToPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepliesConverter.cs" />
     <Compile Include="SingleThreadView.xaml.cs">
       <DependentUpon>SingleThreadView.xaml</DependentUpon>
     </Compile>

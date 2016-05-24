@@ -8,6 +8,10 @@
     xmlns:models="using:App1.Models"
     mc:Ignorable="d">
 
+    <UserControl.Resources>
+        <local:RepliesConverter x:Key="RepliesConverter"/>
+    </UserControl.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer>
             <StackPanel Margin="70,70,20,20">
@@ -20,13 +24,8 @@
                                     <TextBlock HorizontalAlignment="Right" Text="{Binding now}" Style="{StaticResource CaptionTextBlockStyle}"/>
                                 </Grid>
                                 <Image x:ConnectionId='3'                                           Width="100" Height="100"/>
-                                <!--<TextBlock Text="{Binding com}"/>-->
-                                <RichTextBlock>
-                                    <Paragraph>
-                                        <Run Text="{Binding com}"></Run>
-                                    </Paragraph>
-                                </RichTextBlock>
-                                <Button x:ConnectionId='4'                        Content="More" Height="50" Width="100"></Button>
+                                <RichTextBlock models:Properties.Html="{Binding com}"/>
+                                <Button x:ConnectionId='4'                        Content="{Binding replies, Converter={StaticResource RepliesConverter}}" HorizontalAlignment="Center" Height="30" ></Button>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

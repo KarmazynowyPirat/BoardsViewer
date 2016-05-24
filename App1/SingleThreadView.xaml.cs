@@ -76,7 +76,6 @@ namespace App1
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            SystemNavigationManager.GetForCurrentView().BackRequested -= null;
             //disabling posibility of backing on other pages
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                     AppViewBackButtonVisibility.Collapsed;
@@ -108,29 +107,34 @@ namespace App1
         {
             var image = sender as Image;
 
-            var dialog = new ContentDialog();
+            var uiSender = sender as UIElement;
+            var flyout = (FlyoutBase)uiSender.GetValue(FlyoutBase.AttachedFlyoutProperty);
+            flyout.Placement = FlyoutPlacementMode.Top;
+            flyout.ShowAt(uiSender as FrameworkElement);
 
-            var scrollViewer = new ScrollViewer();
-            var stackPanel = new StackPanel();
-            stackPanel.Children.Add(scrollViewer);
+            //var dialog = new ContentDialog();
 
-            var img = new Image();
-            img.Source = image.Source;
-            img.Stretch = Stretch.Fill;
+            //var scrollViewer = new ScrollViewer();
+            //var stackPanel = new StackPanel();
+            //stackPanel.Children.Add(scrollViewer);
 
-            var button = new Button();
-            button.Tapped += (a, b) => dialog.Hide();
-            button.Content = "Close";
-            button.Height = 50;
-            button.Width = 100;
+            //var img = new Image();
+            //img.Source = image.Source;
+            //img.Stretch = Stretch.Fill;
 
-            stackPanel.Children.Add(button);
+            //var button = new Button();
+            //button.Tapped += (a, b) => dialog.Hide();
+            //button.Content = "Close";
+            //button.Height = 50;
+            //button.Width = 100;
 
-            scrollViewer.Content = img;
+            //stackPanel.Children.Add(button);
 
-            dialog.Content = stackPanel;
+            //scrollViewer.Content = img;
 
-            await dialog.ShowAsync();
+            //dialog.Content = stackPanel;
+
+            //await dialog.ShowAsync();
         }
     }
 }
